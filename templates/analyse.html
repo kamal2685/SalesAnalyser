@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link  href="{{ url_for('static', filename='files/css/style.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined"><a href="/">home</a></span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined"><a href="/download-board" style="text-decoration: none; color: #9799ab;">download</a></span>
+          <span class="material-icons-outlined">search<h/span>
+          
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">inventory</span> My Analyser
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">dashboard</span> Dashboard
+          </li>
+          
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined"><a href="/download-board" style="text-decoration: none; color: #9799ab;">download</a></span> Subplots
+          </li>
+          
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined"><a href="/" style="text-decoration: none; color: #9799ab;">arrow_back</a></span> Back
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+
+      <!-- Main -->
+      <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">DASHBOARD</p>
+        </div>
+
+        <!-- <div class="main-cards">
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">PRODUCTS</p>
+              <span class="material-icons-outlined text-blue">inventory_2</span>
+            </div>
+            <span class="text-primary font-weight-bold">{{ products }}</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">PURCHASE ORDERS</p>
+              <span class="material-icons-outlined text-orange">add_shopping_cart</span>
+            </div>
+            <span class="text-primary font-weight-bold">{{orders}}</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">SALES ORDERS</p>
+              <span class="material-icons-outlined text-green">shopping_cart</span>
+            </div>
+            <span class="text-primary font-weight-bold">{{sales}}</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">PROFIT</p>
+              <span class="material-icons-outlined text-red">notification_important</span>
+            </div>
+            <span class="text-primary font-weight-bold">{{profit}}</span>
+          </div>
+
+        </div> -->
+
+        <div class="charts">
+
+          <div class="charts-card">
+            <p class="chart-title">Profit distribution over categories</p>
+            <div id="bar-chart"></div>
+          </div>
+
+          <div class="charts-card">
+            <p class="chart-title">Profit and Sales distribution</p>
+            <div id="area-chart"></div>
+          </div>
+          <div class="charts-card">
+            <p class="chart-title">Ship mode profit distribution</p>
+            <div id="pie-chart"></div>
+          </div>
+
+          <div class="charts-card">
+            <p class="chart-title">Profit distribution across years</p>
+            <div id="bar-chart2"></div>
+          </div>
+
+        </div>
+      </main>
+      <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    
+    <script src="{{ url_for('static', filename='files/js/script.js') }}"></script>
+  </body>
+</html>
